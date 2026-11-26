@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodify | Restu Ilhamsyah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">♫</div>
+            <h2>Mood<span>ify.</span></h2>
+        </div>
+
+        <p class="sidebar-description">
+            Your mood, your music.
+            Temukan musik sesuai suasana hatimu.
+        </p>
+
+        <div class="nav-title">MENU UTAMA</div>
+
+        <nav class="nav-menu">
+            <button class="nav-btn active" onclick="showPage('home', this)">
+                <span>⌂</span> Beranda
+            </button>
+
+            <button class="nav-btn" onclick="showPage('logic', this)">
+                <span>∑</span> Tabel Logika
+            </button>
+        </nav>
+
+        <div class="owner-profile">
+            <div class="owner-avatar">RI</div>
+            <div class="owner-info">
+                <small>PROJECT DEVELOPER</small>
+                <strong>Restu Ilhamsyah</strong>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HALAMAN BERANDA -->
+        <section id="home" class="page active">
+
+            <div class="top-label">
+                <span class="status-dot"></span>
+                PERSONAL MUSIC RECOMMENDATION
+            </div>
+
+            <div class="hero">
+
+                <div class="hero-text">
+                    <p class="eyebrow">WELCOME TO MOODIFY</p>
+
+                    <h1>
+                        Music for your
+                        <span>mood.</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Setiap suasana memiliki musiknya sendiri.
+                        Temukan rekomendasi musik yang sesuai
+                        dengan suasana hati, cuaca, dan aktivitasmu.
+                    </p>
+
+                    <div class="hero-author">
+                        Created by <strong>Restu Ilhamsyah</strong>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="visual-circle circle-one"></div>
+                    <div class="visual-circle circle-two"></div>
+                    <div class="visual-music">♫</div>
+                    <div class="visual-note note-one">♪</div>
+                    <div class="visual-note note-two">♫</div>
+                </div>
+
+            </div>
+
+            <!-- FORM REKOMENDASI -->
+            <div class="form-card">
+
+                <div class="section-heading">
+                    <div class="section-icon">🎧</div>
+                    <div>
+                        <h2>Temukan Musikmu</h2>
+                        <p>Jawab beberapa pertanyaan berikut.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="mood">😊 Suasana Hati</label>
+                        <select id="mood">
+                            <option value="">Pilih suasana hati</option>
+                            <option value="Senang">Senang</option>
+                            <option value="Sedih">Sedih</option>
+                            <option value="Santai">Santai</option>
+                            <option value="Bersemangat">Bersemangat</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weather">🌤️ Kondisi Cuaca</label>
+                        <select id="weather">
+                            <option value="">Pilih kondisi cuaca</option>
+                            <option value="Cerah">Cerah</option>
+                            <option value="Hujan">Hujan</option>
+                            <option value="Mendung">Mendung</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity">🎯 Aktivitas</label>
+                        <select id="activity">
+                            <option value="">Pilih aktivitas</option>
+                            <option value="Belajar">Belajar</option>
+                            <option value="Olahraga">Olahraga</option>
+                            <option value="Bersantai">Bersantai</option>
+                            <option value="Bekerja">Bekerja</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="focus">🧠 Ingin Fokus?</label>
+                        <select id="focus">
+                            <option value="">Pilih jawaban</option>
+                            <option value="Ya">Ya</option>
+                            <option value="Tidak">Tidak</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <button class="submit-btn" onclick="recommendMusic()">
+                    <span>✦</span>
+                    Temukan Rekomendasi Musik
+                </button>
+
+            </div>
+
+            <!-- HASIL REKOMENDASI -->
+            <div id="result"></div>
+
+        </section>
+
+        <!-- HALAMAN TABEL LOGIKA -->
+        <section id="logic" class="page">
+
+            <div class="top-label">
+                <span class="status-dot"></span>
+                DISCRETE MATHEMATICS
+            </div>
+
+            <div class="page-heading">
+                <p class="eyebrow">MOODIFY LEARNING CENTER</p>
+
+                <h1>
+                    Tabel <span>Kebenaran.</span>
+                </h1>
+
+                <p>
+                    Penerapan lima konsep logika matematika
+                    dalam sistem rekomendasi musik Moodify.
+                </p>
+            </div>
+
+            <!-- DEFINISI PROPOSISI -->
+            <div class="logic-card">
+
+                <div class="card-heading">
+                    <span>📌</span>
+                    <h2>Definisi Proposisi</h2>
+                </div>
+
+                <p class="logic-description">
+                    Proposisi adalah pernyataan yang memiliki
+                    nilai kebenaran benar atau salah.
+                </p>
+
+                <div class="proposition-grid">
+                    <div><b>P</b><span>Suasana hati senang</span></div>
+                    <div><b>Q</b><span>Cuaca cerah</span></div>
+                    <div><b>R</b><span>Aktivitas belajar</span></div>
+                    <div><b>S</b><span>Aktivitas olahraga</span></div>
+                    <div><b>T</b><span>Ingin fokus</span></div>
+                    <div><b>V</b><span>Rekomendasi instrumental</span></div>
+                    <div><b>U</b><span>Aktivitas belajar</span></div>
+                </div>
+
+                <div class="logic-note">
+                    <strong>Keterangan:</strong>
+                    Nilai 1 berarti Benar dan nilai 0 berarti Salah.
+                </div>
+
+            </div>
+
+            <!-- KONJUNGSI -->
+            <div class="table-section">
+
+                <div class="table-heading">
+                    <span class="number">01</span>
+                    <div>
+                        <h2>Konjungsi (AND)</h2>
+                        <p>P ∧ Q</p>
+                    </div>
+                </div>
+
+                <p class="logic-description">
+                    Konjungsi menggunakan operator DAN.
+                    Hasilnya benar apabila kedua proposisi benar.
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>P</th><th>Q</th><th>P ∧ Q</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>1</td><td>0</td><td class="false">0</td></tr>
+                            <tr><td>0</td><td>1</td><td class="false">0</td></tr>
+                            <tr><td>0</td><td>0</td><td class="false">0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- DISJUNGSI -->
+            <div class="table-section">
+
+                <div class="table-heading">
+                    <span class="number">02</span>
+                    <div>
+                        <h2>Disjungsi (OR)</h2>
+                        <p>R ∨ S</p>
+                    </div>
+                </div>
+
+                <p class="logic-description">
+                    Disjungsi menggunakan operator ATAU.
+                    Hasilnya salah hanya jika kedua proposisi salah.
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>R</th><th>S</th><th>R ∨ S</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>1</td><td>0</td><td class="true">1</td></tr>
+                            <tr><td>0</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>0</td><td>0</td><td class="false">0</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- IMPLIKASI -->
+            <div class="table-section">
+
+                <div class="table-heading">
+                    <span class="number">03</span>
+                    <div>
+                        <h2>Implikasi (IF THEN)</h2>
+                        <p>T → V</p>
+                    </div>
+                </div>
+
+                <p class="logic-description">
+                    Implikasi menyatakan hubungan jika T maka V.
+                    Hasilnya salah hanya ketika T benar dan V salah.
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>T</th><th>V</th><th>T → V</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>1</td><td>0</td><td class="false">0</td></tr>
+                            <tr><td>0</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>0</td><td>0</td><td class="true">1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- BIIMPLIKASI -->
+            <div class="table-section">
+
+                <div class="table-heading">
+                    <span class="number">04</span>
+                    <div>
+                        <h2>Biimplikasi (IFF)</h2>
+                        <p>T ↔ U</p>
+                    </div>
+                </div>
+
+                <p class="logic-description">
+                    Biimplikasi menyatakan hubungan jika dan hanya jika.
+                    Hasilnya benar apabila kedua proposisi memiliki
+                    nilai kebenaran yang sama.
+                </p>
+
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>T</th><th>U</th><th>T ↔ U</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>1</td><td>1</td><td class="true">1</td></tr>
+                            <tr><td>1</td><td>0</td><td class="false">0</td></tr>
+                            <tr><td>0</td><td>1</td><td class="false">0</td></tr>
+                            <tr><td>0</td><td>0</td><td class="true">1</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- EKUIVALENSI -->
+            <div class="table-section">
+
+                <div class="table-heading">
+                    <span class="number">05</span>
+                    <div>
+                        <h2>Ekuivalensi</h2>
+                        <p>(P ∧ Q) ∨ R ≡ (P ∨ R) ∧ (Q ∨ R)</p>
+                    </div>
+                </div>
+
+                <p class="logic-description">
+                    Ekuivalensi menunjukkan dua ekspresi logika
+                    yang memiliki nilai kebenaran sama untuk
+                    setiap kombinasi proposisi.
+                </p>
+
+                <div class="table-container">
+                    <table class="wide-table">
+                        <thead>
+                            <tr>
+                                <th>P</th>
+                                <th>Q</th>
+                                <th>R</th>
+                                <th>Ekspresi 1</th>
+                                <th>Ekspresi 2</th>
+                                <th>Hasil</th>
+                            </tr>
+                        </thead>
+                        <tbody id="equivalence-table"></tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- KESIMPULAN -->
+            <div class="logic-card conclusion-card">
+                <div class="card-heading">
+                    <span>💡</span>
+                    <h2>Kesimpulan</h2>
+                </div>
+
+                <p>
+                    Moodify menerapkan lima konsep logika matematika,
+                    yaitu konjungsi, disjungsi, implikasi,
+                    biimplikasi, dan ekuivalensi. Kelima konsep
+                    tersebut digunakan untuk mengolah pilihan
+                    pengguna menjadi rekomendasi musik sesuai
+                    suasana hati dan aktivitas.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="main-footer">
+            <div class="footer-brand">Moodify.</div>
+            <p>Designed & Developed by</p>
+            <h3>Restu Ilhamsyah</h3>
+            <span>PERSONAL PROJECT · DISCRETE MATHEMATICS · 2026</span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
